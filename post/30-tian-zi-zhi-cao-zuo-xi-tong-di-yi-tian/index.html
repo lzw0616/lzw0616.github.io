@@ -2,21 +2,18 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>JS判断日期是一年中的某一天 | Gridea</title>
+<title>30天自制操作系统第一天 | Gridea</title>
 <link rel="shortcut icon" href="https://lzw0616.github.io/favicon.ico?v=1590054318113">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lzw0616.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="JS判断日期是一年中的某一天 | Gridea - Atom Feed" href="https://lzw0616.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="30天自制操作系统第一天 | Gridea - Atom Feed" href="https://lzw0616.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content=" // 方法一：使用数组
-        function judgeDay() {
-            var sum = 0; //要返回的结果
-            var Date1 = new Date();
-       ..." />
-    <meta name="keywords" content="归档" />
+    <meta name="description" content="下载软件二进制编辑器binary Editor。
+" />
+    <meta name="keywords" content="30天自制操作系统学习" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -78,93 +75,25 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              JS判断日期是一年中的某一天
+              30天自制操作系统第一天
             </h2>
             <div class="post-info">
               <span>
-                2020-04-27
+                2020-05-21
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="https://lzw0616.github.io/tag/wDzf9gd2u/" class="post-tag">
-                  # 归档
+                <a href="https://lzw0616.github.io/tag/iGrP2Z3Dr/" class="post-tag">
+                  # 30天自制操作系统学习
                 </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <pre><code> // 方法一：使用数组
-        function judgeDay() {
-            var sum = 0; //要返回的结果
-            var Date1 = new Date();
-            var arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-            var year = Date1.getFullYear();
-            var month = Date1.getMonth();
-            var day = Date1.getDate();
-            for (var i = 0; i &lt; month + 1; i++) {
-                sum += arr[i];
-            }
-            if (judgeYear(year)) {
-                sum++;
-            }
-            sum += day;
-            return sum;
-        }
-
-
-        function judgeYear(year) {
-            if ((year % 4 == 0 &amp;&amp; year % 100 != 0) || year % 400 == 0) {
-                return true;
-            }
-            return false;
-        }
-        
-        ```
-         // 方法二：使用switch
-        function switchJudge() {
-            var sum = 0; //要返回的结果
-            var Date1 = new Date();
-            var year = Date1.getFullYear();
-            var month = Date1.getMonth() + 1;
-            var day = Date1.getDate();
-            switch (month) {
-                case 12:
-                    sum += 31;
-                case 11:
-                    sum += 30;
-                case 10:
-                    sum += 31;
-                case 9:
-                    sum += 30;
-                case 8:
-                    sum += 31;
-                case 7:
-                    sum += 31;
-                case 6:
-                    sum += 30;
-                case 5:
-                    sum += 31;
-                case 4:
-                    sum += 30;
-                case 3:
-                    sum += 31;
-                case 2:
-                    sum += 28;
-                case 1:
-                    sum += 31;
-                default:
-                    if (judgeYear(year)) {
-                        sum++
-                    }
-                    break;
-
-            }
-            sum += day;
-            return sum;
-        }</code></pre>
+                <p>下载软件二进制编辑器binary Editor。</p>
 
               </div>
               <div class="toc-container">
@@ -174,6 +103,15 @@
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://lzw0616.github.io/post/js-pan-duan-ri-qi-shi-yi-nian-zhong-de-mou-yi-tian-md/">
+              <h3 class="post-title">
+                JS判断日期是一年中的某一天
+              </h3>
+            </a>
+          </div>
         
 
         
