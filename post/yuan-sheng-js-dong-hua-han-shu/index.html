@@ -2,18 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>30天自制操作系统第一天 | Gridea</title>
+<title>原生JS动画函数 | Gridea</title>
 <link rel="shortcut icon" href="https://lzw0616.github.io/favicon.ico?v=1590914951871">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lzw0616.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="30天自制操作系统第一天 | Gridea - Atom Feed" href="https://lzw0616.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="原生JS动画函数 | Gridea - Atom Feed" href="https://lzw0616.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="下载软件二进制编辑器binary Editor。
-" />
-    <meta name="keywords" content="30天自制操作系统学习" />
+    <meta name="description" content="function animate(element,target){
+clearInterval(element.timerId);
+element.timerId=setInterval(function(){
+var current=el..." />
+    <meta name="keywords" content="归档" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -81,25 +83,42 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              30天自制操作系统第一天
+              原生JS动画函数
             </h2>
             <div class="post-info">
               <span>
-                2020-05-21
+                2020-05-31
               </span>
               <span>
                 1 min read
               </span>
               
-                <a href="https://lzw0616.github.io/tag/iGrP2Z3Dr/" class="post-tag">
-                  # 30天自制操作系统学习
+                <a href="https://lzw0616.github.io/tag/wDzf9gd2u/" class="post-tag">
+                  # 归档
                 </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>下载软件二进制编辑器binary Editor。</p>
+                <p>function animate(element,target){<br>
+clearInterval(element.timerId);<br>
+element.timerId=setInterval(function(){<br>
+var current=element.offsetLeft;<br>
+var step=10;<br>
+step=target&gt;current?step:-step;<br>
+current+=step;<br>
+if(Math.abs(target-current)&gt;Math.abs(step)){<br>
+element.style.left=current+'px';<br>
+}else{<br>
+element.style.left=target+'px';<br>
+}<br>
+},20);</p>
+<pre><code>}
+实现思路如下：
+设置一个定时器，使元素element每隔20ms移动step距离,如果目标位置与当前位置相差的距离大于每次移动距离，则继续移动，否则直接设置当前位置为目标位置
+</code></pre>
+<!-- more -->
 
               </div>
               <div class="toc-container">
@@ -112,9 +131,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://lzw0616.github.io/post/js-pan-duan-ri-qi-shi-yi-nian-zhong-de-mou-yi-tian-md/">
+            <a href="https://lzw0616.github.io/post/30-tian-zi-zhi-cao-zuo-xi-tong-di-yi-tian/">
               <h3 class="post-title">
-                JS判断日期是一年中的某一天
+                30天自制操作系统第一天
               </h3>
             </a>
           </div>

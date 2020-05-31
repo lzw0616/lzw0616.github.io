@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lzw0616.github.io</id>
     <title>Gridea</title>
-    <updated>2020-05-21T09:45:33.337Z</updated>
+    <updated>2020-05-31T08:49:20.581Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lzw0616.github.io"/>
     <link rel="self" href="https://lzw0616.github.io/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://lzw0616.github.io/images/avatar.png</logo>
     <icon>https://lzw0616.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[原生JS动画函数]]></title>
+        <id>https://lzw0616.github.io/post/yuan-sheng-js-dong-hua-han-shu/</id>
+        <link href="https://lzw0616.github.io/post/yuan-sheng-js-dong-hua-han-shu/">
+        </link>
+        <updated>2020-05-31T08:43:04.000Z</updated>
+        <summary type="html"><![CDATA[<p>function animate(element,target){<br>
+clearInterval(element.timerId);<br>
+element.timerId=setInterval(function(){<br>
+var current=element.offsetLeft;<br>
+var step=10;<br>
+step=target&gt;current?step:-step;<br>
+current+=step;<br>
+if(Math.abs(target-current)&gt;Math.abs(step)){<br>
+element.style.left=current+'px';<br>
+}else{<br>
+element.style.left=target+'px';<br>
+}<br>
+},20);</p>
+<pre><code>}
+实现思路如下：
+设置一个定时器，使元素element每隔20ms移动step距离,如果目标位置与当前位置相差的距离大于每次移动距离，则继续移动，否则直接设置当前位置为目标位置
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<p>function animate(element,target){<br>
+clearInterval(element.timerId);<br>
+element.timerId=setInterval(function(){<br>
+var current=element.offsetLeft;<br>
+var step=10;<br>
+step=target&gt;current?step:-step;<br>
+current+=step;<br>
+if(Math.abs(target-current)&gt;Math.abs(step)){<br>
+element.style.left=current+'px';<br>
+}else{<br>
+element.style.left=target+'px';<br>
+}<br>
+},20);</p>
+<pre><code>}
+实现思路如下：
+设置一个定时器，使元素element每隔20ms移动step距离,如果目标位置与当前位置相差的距离大于每次移动距离，则继续移动，否则直接设置当前位置为目标位置
+</code></pre>
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[30天自制操作系统第一天]]></title>
         <id>https://lzw0616.github.io/post/30-tian-zi-zhi-cao-zuo-xi-tong-di-yi-tian/</id>
