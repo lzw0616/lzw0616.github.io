@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lzw0616.github.io</id>
     <title>Gridea</title>
-    <updated>2020-05-31T08:49:50.183Z</updated>
+    <updated>2020-07-22T20:05:36.955Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lzw0616.github.io"/>
     <link rel="self" href="https://lzw0616.github.io/atom.xml"/>
@@ -10,6 +10,117 @@
     <logo>https://lzw0616.github.io/images/avatar.png</logo>
     <icon>https://lzw0616.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[放大镜效果实现Demo]]></title>
+        <id>https://lzw0616.github.io/post/fang-da-jing-xiao-guo-shi-xian-demo/</id>
+        <link href="https://lzw0616.github.io/post/fang-da-jing-xiao-guo-shi-xian-demo/">
+        </link>
+        <updated>2020-07-22T20:00:56.000Z</updated>
+        <content type="html"><![CDATA[<p>html文件：</p>
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;box&quot; class=&quot;box&quot;&gt;
+        &lt;!-- 小层 --&gt;
+        &lt;div class=&quot;small&quot;&gt;
+            &lt;!-- 小图 --&gt;
+            &lt;img src=&quot;../img/small.png&quot; alt=&quot;&quot; width=&quot;350&quot;&gt;
+            &lt;!-- 遮挡层 --&gt;
+            &lt;div class=&quot;mask&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- 大层 --&gt;
+        &lt;div class=&quot;big&quot;&gt;
+            &lt;!-- 大图 --&gt;
+            &lt;img src=&quot;../img/big.jpg&quot; alt=&quot;&quot; width=&quot;800&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>css文件：</p>
+<pre><code>* {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 350px;
+            height: 350px;
+            margin: 100px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 360px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none;
+        }
+
+        .mask {
+            width: 175px;
+            height: 175px;
+            background-color: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: move;
+            display: none;
+        }
+        ```
+        js文件：![](https://lzw0616.github.io/post-images/1595448287761.jpg)
+        &lt;script&gt;
+    function my$(id) {
+        return document.getElementById(id);
+    }
+    var box = my$(&quot;box&quot;);
+    var small = box.children[0];
+    var mask = small.children[1];
+    var big = box.children[1];
+    var bigImg = big.children[0];
+    box.onmouseover = function () {
+        mask.style.display = 'block';
+        big.style.display = 'block';
+    }
+    box.onmouseout = function () {
+        mask.style.display = 'none';
+        big.style.display = 'none';
+    }
+    small.onmousemove = function (e) {
+        // 获取遮挡层离窗口的距离
+        let x=e.clientX-mask.offsetWidth/2;
+        let y=e.clientY-mask.offsetHeight/2;
+        //遮挡层离父级元素的距离
+        x=x-100;
+        y=y-100;
+        // 判断是否可以移动
+        x=x&lt;0?0:x;
+        y=y&lt;0?0:y;
+        // 移动距离的最大值
+        let xMax=small.offsetWidth-mask.offsetWidth
+        let yMax=small.offsetHeight-mask.offsetHeight
+        // 实际移动距离
+        let moveX=x&lt;xMax?x:xMax;
+        let moveY=y&lt;yMax?y:yMax;
+        mask.style.left=moveX+'px';
+        mask.style.top=moveY+'px';
+        // 小图片和大图片移动距离关系：小图片移动距离最大值/大图片移动距离最大值=小图片移动距离/大图片移动距离
+        // 大图片移动最大距离
+        var  bigImgMoveX=bigImg.offsetWidth-big.offsetWidth;
+        var  bigImgMoveY=bigImg.offsetHeight-big.offsetHeight;
+        let bigMoveX=moveX*bigImgMoveX/xMax;
+        let bigMoveY=moveY*bigImgMoveY/yMax;
+        bigImg.style.marginLeft=-bigMoveX+'px';
+        bigImg.style.marginTop=-bigMoveY+'px';
+    }
+&lt;/script&gt;
+</code></pre>
+<p><img src="https://lzw0616.github.io/post-images/1595448309835.png" alt="" loading="lazy"><br>
+<img src="https://lzw0616.github.io/post-images/1595448319989.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[原生JS动画函数]]></title>
         <id>https://lzw0616.github.io/post/yuan-sheng-js-dong-hua-han-shu/</id>
